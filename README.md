@@ -818,3 +818,80 @@ print(numpy.mean(data, axis = 1))
      5.95  6.275 5.7   6.1   6.825 5.975 6.725 5.7   6.25  6.4   7.05  5.9  ]
 
 
+## Analyzing Data Part 3 
+
+
+```python
+import numpy 
+data = numpy.loadtxt(fname= 'inflammation-01.csv', delimiter = ',')
+```
+
+
+```python
+# Heat map of patient inflammation over time
+
+import matplotlib.pyplot
+image = matplotlib.pyplot.imshow(data)
+matplotlib.pyplot.show() 
+```
+
+![output_1_0](https://github.com/ajj026/Johnson_Python_Portfolio/assets/134179924/ccb48131-530c-4e63-bb7a-75dbe73f8945)
+
+
+
+```python
+# Average inflammation over time
+
+ave_inflammation = numpy.mean(data, axis = 0)
+ave_plot = matplotlib.pyplot.plot(ave_inflammation)
+matplotlib.pyplot.show() 
+```
+
+![output_2_0](https://github.com/ajj026/Johnson_Python_Portfolio/assets/134179924/9da2ba75-8e22-437c-a119-8451b380bdd2)
+
+
+
+
+```python
+max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis = 0))
+matplotlib.pyplot.show()
+```
+
+![output_3_0](https://github.com/ajj026/Johnson_Python_Portfolio/assets/134179924/7a862789-69d8-493e-b6f7-6a07291124ed)
+
+
+
+
+```python
+min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis = 0))
+matplotlib.pyplot.show()
+```
+![output_4_0](https://github.com/ajj026/Johnson_Python_Portfolio/assets/134179924/e88f779e-3159-4607-aca8-7b7403a109a0)
+
+
+
+
+```python
+fig = matplotlib.pyplot.figure(figsize =(10.0, 3.0))
+
+axes1 = fig.add_subplot(1, 3, 1)
+axes2 = fig.add_subplot(1, 3, 2)
+axes3 = fig.add_subplot(1, 3, 3)
+
+axes1.set_ylabel('average')
+axes1.plot(numpy.mean(data, axis = 0))
+
+axes2.set_ylabel('max') 
+axes2.plot(numpy.amax(data, axis = 0))
+
+axes3.set_ylabel('min')
+axes3.plot(numpy.amin(data, axis = 0)) 
+
+fig.tight_layout()
+
+matplotlib.pyplot.savefig('inflammation.png')
+matplotlib.pyplot.show()
+```
+![output_5_0](https://github.com/ajj026/Johnson_Python_Portfolio/assets/134179924/5da1678b-c1f8-4816-b5aa-fd136f662352)
+
+
