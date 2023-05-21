@@ -2092,7 +2092,7 @@ print(rna_sequence)
 
 
 ```python
-# Promt the user to enter the input RNA file name
+# Prompt the user to enter the input RNA file name
 
 input_file_name = input("Enter the name of the input RNA file:") 
 ```
